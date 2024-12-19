@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео недоступно</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <a href="{% url 'home' %}">
+            <img src="{% static 'deco_logo.png' %}" alt="Логотип">
+        </a>
+    </div>
+    <div class="container">
+        <h1>Видео недоступно</h1>
+        <p>Это видео будет доступно с {{ video.access_date|date:"d.m.Y H:i" }}</p>
+        <div class="buttons">
+            <a href="{% url 'home' %}" class="button">На главную</a>
+            {% if latest_week %}
+                <a href="{% url 'video_page' latest_week %}" class="button">Последнее доступное видео</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
