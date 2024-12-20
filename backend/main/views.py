@@ -3,7 +3,8 @@ from django.utils.timezone import now
 from .models import Video
 
 def home(request):
-    return render(request, 'main/home.html')
+    available_videos = Video.objects.filter(access_date__lte=now()).order_by('access_date')
+    return render(request, 'main/home.html', {'videos': available_videos})
 
 def video_page(request, week_number):
     video = get_object_or_404(Video, week_number=week_number)

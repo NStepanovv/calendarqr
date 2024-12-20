@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Видео недоступно</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
-    <div class="logo">
-        <a href="{% url 'home' %}">
-            <img src="{% static 'deco_logo.png' %}" alt="Логотип">
-        </a>
-    </div>
+    <header>
+        <div class="logo">
+            <a href="https://deco-serv.ru" target="_blank">
+                <img src="{% static 'deco_logo.png' %}" alt="Логотип">
+            </a>
+        </div>
+        <div class="contact-info">
+            <p>Тел.: +7 495 930 83 59</p>
+                <p>Почта: <a href="mailto:info@deco-serv.ru">info@deco-serv.ru</a></p>
+        </div>
+    </header>
     <div class="container">
         <h1>Видео недоступно</h1>
-        <p>Это видео будет доступно с {{ video.access_date|date:"d.m.Y H:i" }}</p>
+        <p>Это видео будет доступно с {{ video.access_date|date:"d.m.Y" }}</p>
         <div class="buttons">
             <a href="{% url 'home' %}" class="button">На главную</a>
             {% if latest_week %}

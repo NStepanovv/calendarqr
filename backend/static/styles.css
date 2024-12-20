@@ -1,46 +1,161 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Светло-серый фон */
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Центрирование контента по вертикали */
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 20px;
 }
 
-.container {
-    background-color: #ffffff; /* Белый фон для рамки */
-    border-radius: 10px; /* Закругленные углы */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Тени */
-    padding: 20px;
-    max-width: 800px;
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    position: fixed; /* Закрепить шапку */
+    top: 0;
+    left: 0;
     width: 100%;
-    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Поверх других элементов */
+    display: flex;
+    justify-content: space-between; /* Логотип слева, контакты справа */
+    align-items: center;
+    height: 60px;
 }
 
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.contact-info {
+    padding-right: 50px;
+    text-align: right; /* Выровнять текст внутри блока по правому краю */
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
 .logo img {
     height: 50px;
-    cursor: pointer;
 }
 
-button {
+.main-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 80px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+}
+
+video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Сетка из 3 столбцов */
+    gap: 30px; /* Расстояние между карточками */
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.video-list p {
+    font-size: 16px;
+    color: #555;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 250px; /* Ограничиваем ширину карточек */
+    margin: auto; /* Центрируем карточки */
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.video-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+button, .button {
+    display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
+    background-color: #e0e0e0;
+    color: #333;
+    text-decoration: none;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+button:hover, .button:hover {
+    background-color: #cccccc;
+    color: #000;
+}
+
+button:active, .button:active {
+    background-color: #aaaaaa;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin-top: 80px;
+    }
+
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .video-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
