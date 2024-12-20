@@ -21,15 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+tkkg1_edhyrh_1x-jw$_c1p0-)gr-xa^q@=ir4p890*rl*y_='
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
+ALLOWED_HOSTS.extend(
+    filter(
+        None,
+        os.environ.get('ALLOWED_HOSTS', '').split(','),
+    )
+)
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", # Разрешаем React-приложение
+CORS_ALLOWED_ORIGINS = [     # Разрешаем React-приложение
     "https://example.com",   # Добавить домен в проде
 ]
 

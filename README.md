@@ -1,4 +1,28 @@
 # calendarqr
+
+## Запуск приложения на удаленном сервере
+1. Обновление apt и установка git
+'''
+sudo apt update
+sudo apt install git
+'''
+
+2. Установка Docker и docker-compose
+https://totaku.ru/ustanovka-docker-i-docker-compose-na-ubuntu-24-04/
+
+3. Установка репозитория
+git clone ...
+
+4. 
+
+
+
+
+
+
+
+
+
 1. Временный переход на SQLite
 Чтобы выполнить миграции и продолжить разработку без PostgreSQL, временно используйте SQLite в файле settings.py. Это позволит вам запускать makemigrations и migrate.
 
