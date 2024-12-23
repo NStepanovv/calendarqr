@@ -38,7 +38,7 @@ CORS_ALLOWED_ORIGINS = [     # Разрешаем React-приложение
     "https://example.com",   # Добавить домен в проде
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True # Для разработки
+CORS_ALLOW_ALL_ORIGINS = False # Для разработки
 
 load_dotenv()
 

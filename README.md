@@ -14,7 +14,7 @@ https://totaku.ru/ustanovka-docker-i-docker-compose-na-ubuntu-24-04/
 
 git clone ...
 
-4. Установить IP и домен в качестве ALLOWED_HOSTS
+4. Установить IP и домен в качестве ALLOWED_HOSTS и заменить логин, пароль для БД
 
 cd backend cp .env.example .env
 vi .env
