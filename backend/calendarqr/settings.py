@@ -34,11 +34,11 @@ ALLOWED_HOSTS.extend(
     )
 )
 
-CORS_ALLOWED_ORIGINS = [     # Разрешаем React-приложение
+CORS_ALLOWED_ORIGINS = [
     "https://example.com",   # Добавить домен в проде
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False # Для разработки
+CORS_ALLOW_ALL_ORIGINS = False
 
 load_dotenv()
 

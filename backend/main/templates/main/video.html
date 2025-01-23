@@ -22,7 +22,7 @@
     </header>
     <div class="container">
         <h1>{{ video.title }}</h1>
-        <video controls>
+        <video controls disablepictureinpicture controlslist="nodownload">
             <source src="{{ video.file.url }}" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
